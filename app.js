@@ -29,6 +29,8 @@ app.use(compress());
 app.use(allowCrossDomain);
 app.use('/', express.static(__dirname + '/public'));
 
+app.get('/wechat/authurl', wechatController.getAuthorizeUrl);
+
 
 var server = app.listen(7100, function () {
 
